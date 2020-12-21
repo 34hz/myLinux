@@ -1,5 +1,6 @@
 # Linux Config
-
+**First:**
+**`cd ./myConfig_ubuntu`**
 
 ## vim
 `cp -r ./vim ~/.vim`
