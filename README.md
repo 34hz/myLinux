@@ -2,7 +2,13 @@
 **First:**
 **`cd ./myConfig_ubuntu`**
 
-## vim
+## vim 
+### 打包文件
+`tar -cvf vim.tar vim`
+
+### 应用
+`tar -xvf vim.tar`
+
 `cp -r ./vim ~/.vim`
 
 `cp ./vimrc ~/.vimrc`
