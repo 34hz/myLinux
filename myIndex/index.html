@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="./img/png/cetacean.png">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>DiDiBoBo</title>
+<script src="./js/rainyday.min.js"></script>
+<script>
+window.onload=function(){
+		var theHeight=window.innerHeight;
+		var theWidth=window.innerWidth;
+		var displayRatio = theWidth / theHeight;
+		var imgRatio = 96/54;
+		var image = document.getElementById('background');
+		//image.crossOrigin = 'anonymous';
+		image.src = "./img/"+parseInt(Math.random()*(33-1+1)+1,10)+".jpg";
+		if (imgRatio > displayRatio) {
+			image.style.height=theHeight+'px';
+			image.style.weight=theHeight*imgRatio+'px';
+		}
+		else {
+			image.style.weight=theWidth+'px';
+			image.style.height=theWidth/imgRatio+'px';
+		}
+		
+		image.onload = function() {
+			var engine = new RainyDay({
+				image: this
+			});
+			engine.rain([ [1, 2, 500] ]);
+			engine.rain([ [3, 3, 0.5], [5, 5, 0.9], [6, 2, 1] ], 70);
+		};
+}
+
+window.onresize=function(){
+		var theHeight=window.innerHeight;
+		var theWidth=window.innerWidth;
+		var displayRatio = theWidth / theHeight;
+		var imgRatio = 96/54;
+		var image = document.getElementById('background');
+		if (imgRatio > displayRatio) {
+			image.style.height=theHeight+'px';
+			image.style.weight=theHeight*imgRatio+'px';
+		}
+		else {
+			image.style.weight=theWidth+'px';
+			image.style.height=theWidth/imgRatio+'px';
+		}
+}
+
+function stop() {
+	return false;
+  }
+document.oncontextmenu = stop;
+</script>
+
+</head>
+<body>
+    <header class="htmleaf-header">
+		<div id="wrap">
+			<div id="top">
+            <!--<img src="./img/png/cetacean.png" alt="PatternFly logo" id="logo" class="wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">-->
+			<img src="./img/png/cetacean.png" alt="PatternFly logo" id="logo">
+					<!-- <h1>DiDiBoBo</h1> -->
+					<div id="kg-btn" class="">
+						<input class='tgl tgl-flip' id='qieh' type='checkbox' />
+						<label class='tgl-btn' data-tg-on='大世界' data-tg-off='小世界' for='qieh'></label>
+				</div>
+			</div>
+			<div id="main">
+
+				<!-- 内网网访问地址 -->
+				<div id="app" class="app animated fadeInLeft">
+					<ul>
+						<li>
+							<a href="https://a.maorx.cn" target="_blank"><img id="qq" class="shake" src="img/png/maorx.png" /><strong>主页</strong></a>
+						</li>
+						<li>
+							<a href="https://v.qq.com" target="_blank"><img id="qq" class="shake" src="img/png/tencent.png" /><strong>腾讯视频</strong></a>
+						</li>
+						<li>
+							<a href="http://192.168.0.111:8096" target="_blank"><img id="qq" class="shake" src="img/png/Jellyfin.png" /><strong>🔐视频</strong></a>
+						</li>
+						<li>
+							<a href="http://192.168.0.109:7788" target="_blank"><img id="qq" class="shake" src="img/png/iCloud-Drive.png" /><strong>🔐可道云</strong></a>
+						</li>
+						<li>
+							<a href="http://192.168.0.111" target="_blank"><img id="qq" class="shake" src="img/png/Unraid.png" /><strong>🔒UNRAID设置</strong></a>
+						</li>
+						<li>
+							<a href="http://192.168.0.222" target="_blank"><img id="qq" class="shake" src="img/png/openwrt.png" /><strong>🔒OpenWrt设置</strong></a>
+						</li> 
+						<li>
+							<a href="http://192.168.0.109:8765/admin" target="_blank"><img id="qq" class="shake" src="img/png/baota.png" /><strong>🔒web设置</strong></a>
+						</li>
+						<li>
+							<a href="http://www.34hz.top:5552" target="_blank"><img id="qq" class="shake" src="img/png/frp.png" /><strong>🔒frp设置</strong></a>
+						</li>
+					</ul>
+				</div>
+				<!-- 外网访问地址 -->
+				<div id="app1" class="app animated fadeInRight">
+					<ul>
+						<li>
+							<a href="https://a.maorx.cn" target="_blank"><img id="qq" class="shake" src="img/png/maorx.png" /><strong>主页</strong></a>
+						</li>
+						<li>
+							<a href="https://v.qq.com" target="_blank"><img id="qq" class="shake" src="img/png/tencent.png" /><strong>腾讯视频</strong></a>
+						</li>
+						<li>
+							<a href="http://jellyfin.34hz.top" target="_blank"><img id="qq" class="shake" src="img/png/Jellyfin.png" /><strong>🔐视频</strong></a>
+						</li>
+						<li>
+							<a href="http://kod.34hz.top" target="_blank"><img id="qq" class="shake" src="img/png/iCloud-Drive.png" /><strong>🔐可道云</strong></a>
+						</li>
+						<li>
+							<a href="http://unraid.34hz.top" target="_blank"><img id="qq" class="shake" src="img/png/Unraid.png" /><strong>🔒UNRAID设置</strong></a>
+						</li>
+						<li>
+							<a href="http://openwrt.34hz.top" target="_blank"><img id="qq" class="shake" src="img/png/openwrt.png" /><strong>🔒OpenWrt设置</strong></a>
+						</li> 
+						<li>
+							<a href="http://172.96.201.214:8999/admin" target="_blank"><img id="qq" class="shake" src="img/png/baota.png" /><strong>🔒web设置</strong></a>
+						</li>
+						<li>
+							<a href="http://www.34hz.top:5552" target="_blank"><img id="qq" class="shake" src="img/png/frp.png" /><strong>🔒frp设置</strong></a>
+						</li>
+					</ul>
+					<br><br><br><br>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+</header>       
+<img id="background" alt="background" src=""/>
+<script src="js/jquery.min.js"></script>
+	</body>
+</html>
