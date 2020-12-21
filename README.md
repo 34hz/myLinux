@@ -1,2 +1,4 @@
-# myLinux
-Linux Config
+# Linux Config
+## vim
+## zsh
+##
