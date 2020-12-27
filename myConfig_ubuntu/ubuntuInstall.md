@@ -1,5 +1,5 @@
 # Ubuntu 初始化流程
-- 查看最新文件 [github](https://github.com/34hz/myLinux/edit/main/myConfig_ubuntu/ubuntuInstall.md)
+- 查看最新文件 [github](https://github.com/34hz/myLinux/blob/main/myConfig_ubuntu/ubuntuInstall.md)
 ## 环境环境配置
 ### 换源
 ```sh
