@@ -1,16 +1,15 @@
 # Ubuntu 初始化流程
-
-## 换源
-```
+- 查看最新文件 [github](https://github.com/34hz/myLinux/edit/main/myConfig_ubuntu/ubuntuInstall.md)
+## 环境环境配置
+### 换源
+```sh
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo sed -i 's/security.ubuntu/mirrors.aliyun/g' /etc/apt/sources.list
 sudo sed -i 's/archive.ubuntu/mirrors.aliyun/g' /etc/apt/sources.list
-sudo apt update
-sudo apt-get upgrade	
+sudo apt update && apt-get upgrade	
 ```
 其他apt命令
-```
-//其他一些apt 命令
+```sh
 sudo apt-get update  更新源
 sudo apt-get install package 安装包
 sudo apt-get remove package 删除包
@@ -27,39 +26,35 @@ sudo apt-cache rdepends package 查看该包被哪些包依赖
 sudo apt-get source package  下载该包的源代码
 sudo apt-get clean && sudo apt-get autoclean 清理无用的包
 sudo apt-get check 检查是否有损坏的依赖
-
 ```
 
-
-## 配置环境
+### 安装常用依赖
 sudo apt install
-
-`vim curl git wget nodejs ccls npm zsh zsh-autosuggestions zsh-syntax-highlighting autojump htop`
+`vim curl git wget nodejs ccls npm ranger make cmake zsh zsh-autosuggestions zsh-syntax-highlighting autojump htop`
 `fcitx-bin fcitx-table smplayer`
 
-## 1. 配置vim
+## 配置vim
 
-### 安装需要的运行环境
+### 检查依赖
 
 - node.js `sudo apt install nodejs`
 - ccls`sudo apt install ccls`
-- npm`# sudo apt install npm -y`
-
-### 1> 在家目录下创建配置文件
+- npm`sudo apt install npm -y`
+- 一键安装`sudo apt install nodejsccls npm -y`
+### 1> 在家目录下创建vim配置文件`.vimrc`文件
 
 `vim ~/.vimrc`
+根据自己需求修改配置文件
+我的`.vimrc` [github](https://github.com/34hz/myLinux/blob/main/myConfig_ubuntu/vimrc)
 
-### 2> 安装插件程序plug
+### 2> 安装插件plug
+如果网络不好建议直接拷贝我的整个'.vim'文件夹覆盖到`~/.vim` [文件夹地址](https://github.com/34hz/myLinux/blob/main/myConfig_ubuntu/vim.tar) 然后可直接跳过后面所有的vim配置操作
 
 - 终端运行
-
-  `curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+`curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 
 ### 3> 安装插件(科学上网)
-
-
-####  安装插件
-
+vimrc中的相关键位映射
 ```
 map PS :PlugStatus<CR> 
 map PI :PlugInstall<CR> 
@@ -69,7 +64,7 @@ map PI :PlugInstall<CR>
 
 可视模式下运行大写`PI`为安装插件
 
-### 4>  配置coc插件(代码补全插件)
+### 4> 配置coc插件(代码补全插件)
 
 - 错误提示
 
@@ -87,15 +82,14 @@ map PI :PlugInstall<CR>
      可视窗口下运行`PS`
 - 还不行的话,拷贝整个.vim文件夹
 
-## 2. 配置zsh
+## 配置zsh
 
-### 1> 一键安装主题oh-my-zsh
+### 1> 安装主题`oh-my-zsh`
 
 `sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
 `sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
--解决443问题,修改hosts
-sudo vi /etc/hosts
-添加以下内容保存即可 （IP地址查询后相应修改，可以ping不同IP的延时 选择最佳IP地址）
+- 解决443问题,修改hosts
+`sudo vi /etc/hosts`添加以下内容保存即可 （IP地址查询后相应修改，可以ping不同IP的延时 选择最佳IP地址）
 ```
 # GitHub Start
 52.74.223.119 github.com
@@ -130,30 +124,32 @@ sudo vi /etc/hosts
 
 - 重启`reboot`
 
-### 2>安装补全插件
+### 2> zsh安装插件
+- 安装补全插件
 
 `git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
 
-### 3>语法高亮插件
+- 语法高亮插件
 
 `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 
 
-### 4>安装powerlevel10k(请先安装对应字体)
+### 3> 安装powerlevel10k主题(请先安装对应字体)
 
 `git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k`
 
-字体网站
-Nerd-Fonts`https://github.com/ryanoasis/nerd-fonts#font-installation`
+字体网站 [Nerd-Fonts](https://github.com/ryanoasis/nerd-fonts#font-installation)
 `https://www.nerdfonts.com/` 
 
-wsl2配置:
-下载Hack 安装到win10字体,在终端配置文件中开启`fontFace": "Hack NF"`
+#### wsl2配置
+下载Hack 安装到win10字体,在终端配置文件中开启
+`fontFace": "Hack NF"`
 
-```
+
 #### Ubuntu系统安装字体方法
 
 cd到下载目录
+```
 sudo cp *.ttf /usr/share/fonts
 cd /usr/share/fonts
 mkfontscale
@@ -161,12 +157,13 @@ sudo apt install xfonts-utils
 mkfontdir
 fc-cache -fv
 ```
-### **然后编辑 zsh的配置文件**
+### 4> **然后编辑 zsh的配置文件**
 
 `vim ~/.zshrc`
+我的.zshrc文件[github](https://github.com/34hz/myLinux/blob/main/myConfig_ubuntu/zshrc)
 
-找到 `plugins` .默认应该是 `plugins=(git)` 改为
-
+- 开启安装的插件
+修改`.zshrc` 中的 `plugins` .默认应该是 `plugins=(git)` 改为
 ```
 plugins=(git
 autojump                                                                  
@@ -174,29 +171,24 @@ zsh-autosuggestions
 zsh-syntax-highlighting
 )
 ```
-然后设置 .zshrc 中的变量 ZSH_THEME
-ZSH_THEME="powerlevel10k/powerlevel10k"
+- 开启上面安装的主题powerlevel10k
+修改`.zshrc` 中的变量 `ZSH_THEME`为
+`ZSH_THEME="powerlevel10k/powerlevel10k"`
 
-## 3. 宝塔面板安装
+## 宝塔面板
 
 ### 资源链接
-
 
 一键安装命令:
 
 `wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh`
 
-### bt更新
+### 查看信息
+`sudo bt`
+### 更新脚本
 
 `curl http://download.bt.cn/install/update6.sh|bash`
 
-### bt重启服务(**若点击更新后没生效，请尝试重启面板服务：**
-
-)
+### bt重启服务(**若点击更新后没生效，请尝试重启面板服务：**)
 
 ` bt restart`
-
-
-
-
-
