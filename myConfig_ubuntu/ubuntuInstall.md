@@ -34,7 +34,7 @@ sudo apt install
 `fcitx-bin fcitx-table smplayer`
 
 ## 配置vim
-
+![Vim](https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif)
 ### 检查依赖
 
 - node.js `sudo apt install nodejs`
