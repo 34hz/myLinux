@@ -84,7 +84,7 @@ map PI :PlugInstall<CR>
 
 ## 配置zsh
 
-### 1> 安装主题`oh-my-zsh`
+### 安装主题`oh-my-zsh`
 
 `sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
 `sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
@@ -124,7 +124,7 @@ map PI :PlugInstall<CR>
 
 - 重启`reboot`
 
-### 2> zsh安装插件
+### zsh安装插件
 - 安装补全插件
 
 `git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
@@ -134,7 +134,7 @@ map PI :PlugInstall<CR>
 `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 
 
-### 3> 安装powerlevel10k主题(请先安装对应字体)
+### 安装powerlevel10k主题(请先安装对应字体)
 
 `git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k`
 
@@ -157,7 +157,7 @@ sudo apt install xfonts-utils
 mkfontdir
 fc-cache -fv
 ```
-### 4> **然后编辑 zsh的配置文件**
+### **然后编辑 zsh的配置文件**
 
 `vim ~/.zshrc`
 我的.zshrc文件[github](https://github.com/34hz/myLinux/blob/main/myConfig_ubuntu/zshrc)
