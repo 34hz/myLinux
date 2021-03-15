@@ -40,7 +40,7 @@ sudo apt install
 - node.js `sudo apt install nodejs`
 - ccls`sudo apt install ccls`
 - npm`sudo apt install npm -y`
-- 一键安装`sudo apt install nodejsccls npm -y`
+- 一键安装`sudo apt install nodejs ccls npm -y`
 ### 1> 在家目录下创建vim配置文件`.vimrc`文件
 
 `vim ~/.vimrc`
