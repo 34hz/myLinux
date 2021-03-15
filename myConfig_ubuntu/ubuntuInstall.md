@@ -127,7 +127,7 @@ map PI :PlugInstall<CR>
 ### zsh安装插件
 - 安装补全插件
 
-`git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
+`git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
 
 - 语法高亮插件
 
