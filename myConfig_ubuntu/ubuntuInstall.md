@@ -30,7 +30,7 @@ sudo apt-get check 检查是否有损坏的依赖
 
 ### 安装常用依赖
 sudo apt install
-`vim curl git wget nodejs ccls npm ranger make cmake zsh zsh-autosuggestions zsh-syntax-highlighting autojump htop`
+`vim curl git wget nodejs ccls npm ranger make cmake zsh net-tools htop`
 `fcitx-bin fcitx-table smplayer`
 
 ## 配置vim
@@ -152,10 +152,10 @@ cd到下载目录
 ```
 sudo cp *.ttf /usr/share/fonts
 cd /usr/share/fonts
-mkfontscale
+sudo mkfontscale
 sudo apt install xfonts-utils
-mkfontdir
-fc-cache -fv
+sudo mkfontdir
+sudo fc-cache -fv
 ```
 ### **然后编辑 zsh的配置文件**
 
